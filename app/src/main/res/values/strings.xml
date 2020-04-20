@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SheepAR</string>
+
+    <!-- Home -->
+    <string name="home_title">Please Draw Me A Sheep… in AR!</string>
+    <string name="home_button_1">Sheep AR</string>
+    <string name="home_button_2">Sheep reloaded</string>
+    <string name="home_button_3">sheep revolution</string>
+    <string name="home_button_4">Sheep Unity</string>
+
+    <!-- Sheep Card -->
+    <string name="sheep_card_name">Marvin Sheep</string>
+    <string name="sheep_card_desc">Hello there! I am Marvin the sheep, the cutest animal in this virtual universe. I love metal music and headbanging.</string>
+    <string name="sheep_card_action_label">HeadBanging</string>
+
+</resources>

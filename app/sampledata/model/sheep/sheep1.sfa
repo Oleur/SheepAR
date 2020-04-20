@@ -1,0 +1,111 @@
+{
+  materials: [
+    {
+      name: 'black',
+      parameters: [
+        {
+          baseColor: 'black',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.14280000000000001,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'dkbrown',
+      parameters: [
+        {
+          baseColor: 'dkbrown',
+        },
+        {
+          baseColorTint: [
+            0.17254900000000001,
+            0.13725499999999999,
+            0.054901999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.14280000000000001,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'white',
+      parameters: [
+        {
+          baseColor: 'white',
+        },
+        {
+          baseColorTint: [
+            0.89019599999999999,
+            0.88235300000000005,
+            0.83529399999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.14280000000000001,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/sheep/sheep1.obj',
+    name: 'sheep1',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/model/sheep/white.png',
+      name: 'white',
+      pipeline_name: 'white.png',
+    },
+    {
+      file: 'sampledata/model/sheep/dkbrown.png',
+      name: 'dkbrown',
+      pipeline_name: 'dkbrown.png',
+    },
+    {
+      file: 'sampledata/model/sheep/black.png',
+      name: 'black',
+      pipeline_name: 'black.png',
+    },
+  ],
+  version: '0.54:2',
+}

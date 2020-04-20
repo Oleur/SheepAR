@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#f7f7f7"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/home_title"
+        android:textColor="@color/colorText"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="40dp"
+        android:src="@drawable/img_sheep"
+        app:layout_constraintBottom_toTopOf="@+id/arDemo1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/arDemo1"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/btn_default"
+        android:gravity="center"
+        android:text="@string/home_button_1"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/arDemo3"
+        app:layout_constraintEnd_toStartOf="@+id/arDemo2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/arDemo2"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp"
+        android:padding="8dp"
+        android:background="@drawable/btn_default"
+        android:gravity="center"
+        android:text="@string/home_button_2"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/arDemo4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arDemo1"/>
+
+    <TextView
+        android:id="@+id/arDemo3"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/btn_default"
+        android:gravity="center"
+        android:text="@string/home_button_3"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/arDemo4"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/arDemo4"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="2dp"
+        android:background="@drawable/btn_default"
+        android:gravity="center"
+        android:text="@string/home_button_4"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arDemo3"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
