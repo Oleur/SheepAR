@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.animation.AccelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import com.google.ar.core.Config
 import com.google.ar.core.HitResult
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Node
@@ -19,8 +20,6 @@ import com.google.ar.sceneform.math.Vector3Evaluator
 import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.ArFragment
 import com.js.sheepar.R
-import com.js.sheepar.core.add
-import com.js.sheepar.core.minus
 import com.js.sheepar.core.plus
 import com.js.sheepar.databinding.ActivitySheepShapeBinding
 import com.js.sheepar.ui.extension.checkIsSupportedDeviceOrFinish
@@ -68,6 +67,18 @@ class SheepShapeActivity : AppCompatActivity() {
         // Display a colored textured cube
         makeSheepAssets()
 
+
+        val config = arFragment?.arSceneView?.session?.config?.apply {
+            lightEstimationMode = Config.LightEstimationMode.ENVIRONMENTAL_HDR
+
+            /*val isDepthSupported = arFragment?.arSceneView?.session?.isDepthModeSupported(Config.DepthMode.AUTOMATIC)
+            if (isDepthSupported!!) {
+                depthMode = Config.DepthMode.AUTOMATIC
+            }*/
+        }
+        arFragment?.arSceneView?.session?.configure(config)
+
+        arFragment?.arSceneView?.isLightDirectionUpdateEnabled = true
         arFragment?.arSceneView?.isLightEstimationEnabled = true
         arFragment?.setOnTapArPlaneListener { hitResult, _, _ ->
             if (sheepNode != null) {
@@ -178,14 +189,23 @@ class SheepShapeActivity : AppCompatActivity() {
     }
 
     private fun createHeadbangAnimator(headRotation: Quaternion) = AnimatorSet().apply {
-        val rotation = Quaternion.multiply(headRotation, Quaternion.axisAngle(Vector3(0f, 0.5f, 0f), 45f))
+        val rotation = Quaternion.multiply(
+            headRotation, Quaternion.axisAngle(
+                Vector3(0f, 0.5f, 0f),
+                45f
+            )
+        )
         val startPosition = sheepHeadNode!!.localPosition
         val endPosition = startPosition + Vector3(0f, -0.05f, 0f)
-        playTogether(headRotationAnimator(rotation), headTranslationAnimator(startPosition, endPosition))
+        playTogether(
+            headRotationAnimator(rotation), headTranslationAnimator(
+                startPosition,
+                endPosition
+            )
+        )
     }
 
-    private fun headRotationAnimator(headRotation: Quaternion)
-            = ObjectAnimator().apply {
+    private fun headRotationAnimator(headRotation: Quaternion) = ObjectAnimator().apply {
         setObjectValues(headRotation)
         setPropertyName("localRotation")
         setEvaluator(QuaternionEvaluator())
@@ -196,8 +216,7 @@ class SheepShapeActivity : AppCompatActivity() {
         repeatCount = ObjectAnimator.INFINITE
     }
 
-    private fun headTranslationAnimator(startPosition: Vector3, endPosition: Vector3)
-            = ObjectAnimator().apply {
+    private fun headTranslationAnimator(startPosition: Vector3, endPosition: Vector3) = ObjectAnimator().apply {
         setObjectValues(startPosition, endPosition)
         setPropertyName("localPosition")
         setEvaluator(Vector3Evaluator())

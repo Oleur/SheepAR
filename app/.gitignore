@@ -1,1 +1,17 @@
-/build
+# Gradle / Build
+.gradle/
+build/
+
+# Local configuration
+local.properties
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+captures/
+
+# Release keystore info
+keystore.properties
+
+# NodeJS files
+node_modules
